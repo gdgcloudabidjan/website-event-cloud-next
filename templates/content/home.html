@@ -1,0 +1,357 @@
+{{define "content"}}
+    <main>
+    <!-- START Section Hero -->
+    <section class="section-hero" id="accueil">
+        <div class="banner position-relative">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-12 text-lg-left text-center" data-wow-delay="0.2s">
+                        <div class="banner-text">
+                            <div data-aos="zoom-in" data-aos-duration="2000">
+                                <h1 class="c-white mb-3 mb-md-4 text-center">[ Cloud Next OnAir ]<br>Abidjan</h1>
+                                <p class="c-white"> Développez vos compétences en participant à des ateliers pratiques, à des discussions de certification et à des questions-réponses en direct avec des Google Developer Expert.</p>
+                            </div>
+                            <div data-aos="zoom-in" data-aos-duration="3000">
+                                <a href="https://gdg.community.dev/e/m2a24s/" rel="noopener" aria-label="Cloud Next OnAir Abidjan - GDG Cloud Abidjan" class="btn btn-lg btn-custom btn-light mt-4">Participer</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12 d-none d-lg-block wow zoomIn" data-wow-delay="0.4s">
+                        <div class="banner-img">
+                            <img src="static/img/home/banner-vector.png" loading="lazy" width="1124" height="724" alt="community">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="curve-shape">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="846px" height="875px">
+                <defs>
+                    <linearGradient id="PSgrad_0" x1="0%" x2="100%" y1="0%" y2="0%">
+                        <stop offset="0%" stop-color="rgb(112,90,228)" stop-opacity="1" />
+                        <stop offset="0%" stop-color="rgb(78,98,215)" stop-opacity="1" />
+                        <stop offset="100%" stop-color="rgb(118,190,233)" stop-opacity="1" />
+                    </linearGradient>
+
+                </defs>
+                <path fill-rule="evenodd" opacity="0.4" fill="rgb(113, 180, 231)"
+                    d="M772.494,875.000 C772.494,875.000 1003.238,671.570 647.028,530.599 C647.028,530.599 385.842,375.193 552.111,250.572 C645.545,180.541 651.008,41.335 376.458,5.950 C376.458,5.950 223.512,-23.950 130.756,50.715 C130.756,50.715 0.060,131.198 -0.000,300.905 C-0.049,439.755 1.152,875.000 1.152,875.000 L772.494,875.000 Z" />
+                <path fill="url(#PSgrad_0)"
+                    d="M772.494,875.000 C772.494,875.000 1003.238,671.570 647.028,530.599 C647.028,530.599 385.842,375.193 552.111,250.572 C645.545,180.541 651.008,41.335 376.458,5.950 C376.458,5.950 223.512,-23.950 130.756,50.715 C130.756,50.715 0.060,131.198 -0.000,300.905 C-0.049,439.755 1.152,875.000 1.152,875.000 L772.494,875.000 Z" />
+            </svg>
+        </div>
+    </section>
+    <!-- END Section Hero -->
+
+    <!-- START Section About -->
+    <section class="about-section bg-white">
+        <div class="container">
+            <div>
+                <div class="client-slider" id="client-slider">
+                    {{range .Sponsors}}
+                    <div class="item">
+                        <img src="{{.ImageURL}}" loading="lazy" width="200" height="200" alt="{{.Alt}}">
+                    </div>
+                    {{end}}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END Section About -->
+
+    <!-- START Section About Us -->
+    <section class="bg-light sp-100" id="next_OnAir">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-12">
+                    <div data-aos="fade-up" data-aos-duration="3000">
+                        <h2 class="subtitle-left">Next OnAir Abidjan</h2>
+                        <h3>Regardez les keynotes, sessions et démos où que vous soyez.</h3>
+                        <p class="mb-30">Découvrez des plongées numériques approfondies dans les démos, les discussions sur la diversité, l'équité et l'inclusion et les packages de sessions.</p>
+                    </div>
+                    <ul class="list-one" data-aos="fade-right" data-aos-duration="2000">
+                        <li>Migrez et modernisez les charges de travail sur l'infrastructure globale, sécurisée et fiable de Google.</li>
+                        <li>Développer et exécuter des applications à l'aide de logiciels open source et d'autres logiciels sans personnel d'exploitation.</li>
+                        <li>Ajoutez intelligence et efficacité à votre entreprise grâce à l'IA et à l'apprentissage automatique.</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 col-12 d-none d-lg-block wow zoomIn pl-5">
+                    <div class="about-page-img" data-aos-duration="3000">
+                        <img src="static/img/pages/about-img.png" class="img-fluid" loading="lazy" width="1124" height="920" alt="Cloud Next OnAir Abidjan">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END Section About Us -->
+
+    <!-- START Section Team -->
+    <section class="team-section bg-w sp-100-70" id="speakers">
+        <div class="container">
+            <div class="row" data-aos="fade-down" data-aos-duration="3000">
+                <div class="col-12">
+                    <div class="section-title title-left text-center text-lg-left">
+                        <h3 class="top-sep">Nos Speakers</h3>
+                        <p>Nous avons sélectionné les meilleurs speakers et leaders en première ligne de transformation, d'innovation et d'exploration pour partager leurs connaissances avec vous.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                {{range .Speakers}}
+                <div class="col-md-6 col-lg-4 mb-30" data-aos="zoom-in-up" data-aos-duration="{{.Duration}}">
+                    <div class="team-item">
+                        <div class="mb-30 position-relative d-flex align-items-center">
+                            <span class="socials d-inline-block">
+                                <a href="{{.Linkhref}}" target="_blank" rel="noopener" aria-label="{{.Arialabel}}" class="zmdi zmdi-twitter"></a>
+                            </span>
+                            <span class="img-holder d-inline-block">
+                                <img src="{{.ImageURL}}" loading="lazy" width="200" height="200" alt="Team">
+                            </span>
+                        </div>
+                        <div class="team-content">
+                            <h4 class="mb-2 speaker-name">{{.Name}}</h4>
+                            <p class="text-uppercase mb-0">{{.Poste}}</p>
+                            <p class="text-uppercase entreprise">{{.Entreprise}}</p>
+                        </div>
+                    </div>
+                </div>
+                {{end}}
+            </div>
+        </div>
+    </section>
+    <!-- END Section Team -->
+
+    <!-- START Section Plan Features -->
+    <section class="service-section overlay-bg bg-light sp-100-70" id="sessions">
+        <div class="container">
+            <div class="row" data-aos="fade-down" data-aos-duration="3000">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h3 class="top-c-sep">Sessions</h3>
+                        <p>Saisissez l'opportunité de vous connecter et de collaborer avec des experts du cloud computing en participant à nos différentes sessions. Nous avons hâte de vous avoir parmi nous.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 mb-30" data-aos="zoom-in-up" data-aos-duration="1000">
+                    <div class="plan-box">
+                        <div class="icon-box mb-4">
+                            <i class="zmdi zmdi-collection-item-1"></i>
+                        </div>
+                        <h4>Cloud Run</h4>
+                        <p class="plan-text">Dans cette session, nous présenterons les nouvelles fonctionnalités de Cloud Run qui vous faciliterons la gestion des charges de travail en production.</p>
+                        <span>
+                            <i class="zmdi zmdi-collection-item-1"></i>
+                        </span>
+                        <hr class="ligne-1">
+                        <div class="date">
+                            <p class="left"><i class="zmdi zmdi-calendar-alt"></i> 21 Sept</p>
+                            <p class="right"><a href="https://gdg.community.dev/e/m2a24s/" rel="noopener" aria-label="Cloud Next OnAir Abidjan - GDG Cloud Abidjan" class="btn btn-custom">Participer</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 mb-30" data-aos="zoom-in-up" data-aos-duration="2000">
+                    <div class="plan-box">
+                        <div class="icon-box mb-4">
+                            <i class="zmdi zmdi-collection-item-2"></i>
+                        </div>
+                        <h4>Qwiklabs GCE</h4>
+                        <p class="plan-text">Dans cet atelier pratique, vous apprendrez à déployer un serveur Web et le connecter à une machine virtuelle de Google Compute Engine.</p>
+                        <span>
+                            <i class="zmdi zmdi-collection-item-2"></i>
+                        </span>
+                        <hr class="ligne-2">
+                        <div class="date">
+                            <p class="left"><i class="zmdi zmdi-calendar-alt"></i> 22 Sept</p>
+                            <p class="right"><a href="https://gdg.community.dev/e/mpxjtj/" target="_blank" rel="noopener" aria-label="" class="btn btn-custom">Participer</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 mb-30" data-aos="zoom-in-up" data-aos-duration="2000">
+                    <div class="plan-box">
+                        <div class="icon-box mb-4">
+                            <i class="zmdi zmdi-collection-item-3"></i>
+                        </div>
+                        <h4>Data engineering</h4>
+                        <p class="plan-text">Cette session présentera les différents moyen pour ingérer, traiter, stocker et visualiser la donnée sur Google Cloud Platform.</p>
+                        <span>
+                            <i class="zmdi zmdi-collection-item-3"></i>
+                        </span>
+                        <hr class="ligne-3">
+                        <div class="date">
+                            <p class="left"><i class="zmdi zmdi-calendar-alt"></i> 23 Sept</p>
+                            <p class="right"><a href="https://gdg.community.dev/e/mbnjk9/" rel="noopener" aria-label="" class="btn btn-custom">Participer</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 mb-30" data-aos="zoom-in-up" data-aos-duration="3000">
+                    <div class="plan-box">
+                        <div class="icon-box mb-4">
+                            <i class="zmdi zmdi-collection-item-4"></i>
+                        </div>
+                        <h4>Qwiklabs GKE</h4>
+                        <p class="plan-text">Avec cet atelier pratique vous montre comment créer, déployer et gérer une application conteneurisée avec Google Kubernetes Engine.</p>
+                        <span>
+                            <i class="zmdi zmdi-collection-item-4"></i>
+                        </span>
+                        <hr class="ligne-4">
+                        <div class="date">
+                            <p class="left"><i class="zmdi zmdi-calendar-alt"></i> 23 Sept</p>
+                            <p class="right"><a href="https://gdg.community.dev/e/mn7b7x/" target="_blank" rel="noopener" aria-label="" class="btn btn-custom">Participer</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 mb-30" data-aos="zoom-in-up" data-aos-duration="1000">
+                    <div class="plan-box">
+                        <div class="icon-box mb-4">
+                            <i class="zmdi zmdi-collection-item-5"></i>
+                        </div>
+                        <h4>Cloud SQL</h4>
+                        <p class="plan-text">Dans cet atelier pratique, vous recevrez une pratique des bases de Cloud SQL et progresserez rapidement vers des fonctionnalités avancées.</p>
+                        <span>
+                            <i class="zmdi zmdi-collection-item-5"></i>
+                        </span>
+                        <hr class="ligne-1">
+                        <div class="date">
+                            <p class="left"><i class="zmdi zmdi-calendar-alt"></i> 24 Sept</p>
+                            <p class="right"><a href="https://gdg.community.dev/e/mbs3s6/" rel="noopener" aria-label="" class="btn btn-custom">Participer</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="col-lg-4 col-md-6 col-12 mb-30" data-aos="zoom-in-up" data-aos-duration="2000">
+                    <div class="plan-box">
+                        <div class="icon-box mb-4">
+                            <i class="zmdi zmdi-collection-item-5"></i>
+                        </div>
+                        <h4>App Engine</h4>
+                        <p class="plan-text">Débutez avec la plate-forme de cloud computing pour le développement et l'hébergement d'applications Web sur Google Cloud Platform.</p>
+                        <span>
+                            <i class="zmdi zmdi-collection-item-5"></i>
+                        </span>
+                        <hr class="ligne-1">
+                        <div class="date">
+                            <p class="left"><i class="zmdi zmdi-calendar-alt"></i> 24 Sept</p>
+                            <p class="right"><a href="#" rel="noopener" aria-label="" class="btn btn-custom">Participer</a></p>
+                        </div>
+                    </div>
+                </div>-->
+                <div class="col-lg-4 col-md-6 col-12 mb-30" data-aos="zoom-in-up" data-aos-duration="3000">
+                    <div class="plan-box">
+                        <div class="icon-box mb-4">
+                            <i class="zmdi zmdi-collection-item-6"></i>
+                        </div>
+                        <h4>APIs ML sur GCP</h4>
+                        <p class="plan-text">Cloud Vision pour la vision par ordinateur, cloud Translation pour la traduction et enfin cloud Natural Language pour l'analyse de sentiment.</p>
+                        <span>
+                            <i class="zmdi zmdi-collection-item-6"></i>
+                        </span>
+                        <hr class="ligne-2">
+                        <div class="date">
+                            <p class="left"><i class="zmdi zmdi-calendar-alt"></i> 26 Sept</p>
+                            <p class="right"><a href="https://gdg.community.dev/e/mvja7e/" rel="noopener" aria-label="" class="btn btn-custom">Participer</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END Section Plan Features -->
+
+
+    <!-- START Section Counter -->
+    <section class="sp-100-70 bg-gradi counters-section" id="details">
+        <div class="container">
+            <div class="row" data-aos="fade-down" data-aos-duration="3000">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h3 class="top-c-sep  c-white">Quelques faits réels</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-center">
+                {{range .Counters}}
+                <div class="col-lg-3 col-md-6 mb-30" data-aos="zoom-in-up" data-aos-duration="{{.DurationCount}}">
+                    <div class="counter-box d-flex d-lg-block">
+                        <div class="icon-box mb-3">
+                            <i class="zmdi zmdi-mic zmdi-hc-fw"></i>
+                        </div>
+                        <div class="ml-5 ml-lg-0 pt-1 pt-lg-0">
+                            <h3 class="mb-2 count" data-count="{{.DataCount}}">{{.DataCount}}</h3>
+                            <p class="c-black text-capitalize">{{.NameCount}}</p>
+                        </div>
+                    </div>
+                </div>
+                {{end}}
+            </div>
+        </div>
+    </section>
+    <!-- END Section Counter -->
+
+    <!-- START Section Testimonials -->
+    <section class="sp-100 overlay-bg bg-w testimonial-section" id="organisateurs">
+        <div class="container">
+            <div class="row" data-aos="fade-down" data-aos-duration="3000">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h3 class="top-c-sep">Organisateurs</h3>
+                    </div>
+                </div>
+            </div>
+            <div id="testimonial-slider" class="testimonial-slider mb-0 text-center">
+                <div class="testimonial-item" data-aos="zoom-in-up" data-aos-duration="1000">
+                    <div class="img-holder mx-auto mx-md-0">
+                        <img src="static/img/equipe/Ezekias.jpg" loading="lazy" width="200" height="200" alt="Ezekias - Manager du GDG Cloud Abidjan">
+                    </div>
+                    <div class="testimonial-content text-center text-md-left">
+                        <h4 class="btm-sep btm-sep-center pb-3 mb-3">Ezekias BOKOVE</h4>
+                        <p class="mb-0">Manager du GDG Cloud Abidjan &amp; Facilitator #IamRemarkable</p>
+                    </div>
+                </div>
+                <div class="testimonial-item" data-aos="zoom-in-up" data-aos-duration="2000">
+                    <div class="img-holder mx-auto mx-md-0">
+                        <img src="static/img/equipe/Nadia.jpg" loading="lazy" width="200" height="200" alt="Nadia - Women Techmakers Lead du GDG Cloud Abidjan">
+                    </div>
+                    <div class="testimonial-content text-center text-md-left">
+                        <h4 class="btm-sep btm-sep-center pb-3 mb-3">Nadia TRAORE</h4>
+                        <p class="mb-0">Women Techmakers Lead du GDG Cloud Abidjan</p>
+                    </div>
+                </div>
+                <div class="testimonial-item" data-aos="zoom-in-up" data-aos-duration="2000">
+                    <div class="img-holder mx-auto mx-md-0">
+                        <img src="static/img/equipe/Armel.jpg" loading="lazy" width="200" height="200" alt="Armel - Responsable des programmes du GDG Cloud Abidjan">
+                    </div>
+                    <div class="testimonial-content text-center text-md-left">
+                        <h4 class="btm-sep btm-sep-center pb-3 mb-3">Armel YARA</h4>
+                        <p class="mb-0">Responsable des programmes du GDG Cloud Abidjan</p>
+                    </div>
+                </div>
+                <div class="testimonial-item" data-aos="zoom-in-up" data-aos-duration="3000">
+                    <div class="img-holder mx-auto mx-md-0">
+                        <img src="static/img/equipe/Berenger.jpg" loading="lazy" width="200" height="200" alt="Berenger - Responsable de la communication du GDG Cloud Abidjan">
+                    </div>
+                    <div class="testimonial-content text-center text-md-left">
+                        <h4 class="btm-sep btm-sep-center pb-3 mb-3">Berenger N’GUESSAN</h4>
+                        <p class="mb-0">Responsable de la communication du GDG Cloud Abidjan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END Section Testimonials -->
+
+    <!-- START Section CTA -->
+    <section class="cta-section position-relative" data-aos="fade-down" data-aos-duration="3000">
+        <div class="container">
+            <div class="cta-box bg-white wow fadeInUp" data-wow-delay="0.2s">
+                <h3>GDG Cloud Abidjan</h3>
+                <p class="mb-30 mx-auto">Rejoignez des milliers de développeurs lors des rencontres de notre communauté où nous partageons avec passion nos connaissances, nos bonnes pratiques et nos idées sur l'utilisation de Google Cloud et d'autres produits Google.
+                </p>
+                <a href="https://gdg.community.dev/gdg-cloud-abidjan/" target="_blank" rel="noopener" aria-label="GDG Cloud Abidjan" class="btn btn-lg btn-custom">Pour en savoir plus <i
+                        class="zmdi zmdi-long-arrow-right ml-2"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- END Section CTA -->
+    </main>
+
+{{end}}
