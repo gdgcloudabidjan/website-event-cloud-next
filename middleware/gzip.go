@@ -17,7 +17,7 @@ func (gm *GzipMiddleware) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Header().Set("Cache-Control", "max-age=2592000, public, must-revalidate, proxy-revalidate")
-	w.Header().Set("Expires", "Thu, 23 Dec 2021 20:00:00 GMT")
+	w.Header().Set("Expires", "Thu, 28 Sep 2023 22:00:00 GMT")
 	encodings := r.Header.Get("Accept-Encoding")
 	if !strings.Contains(encodings, "gzip") {
 		gm.Next.ServeHTTP(w, r)
@@ -25,7 +25,12 @@ func (gm *GzipMiddleware) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Header().Add("Content-Encoding", "gzip")
 	gzipWriter := gzip.NewWriter(w)
-	defer gzipWriter.Close()
+	defer func(gzipWriter *gzip.Writer) {
+		err := gzipWriter.Close()
+		if err != nil {
+			panic("Failed to close gzip.")
+		}
+	}(gzipWriter)
 	grw := gzipResponseWriter{
 		ResponseWriter: w,
 		Writer:         gzipWriter,
