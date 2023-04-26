@@ -6,7 +6,7 @@
   "dir": "auto",
   "related_applications": [{
     "platform": "webapp",
-    "url": "https://cloud-next-onair-abidjan.web.app/manifest.webmanifest"
+    "url": "https://gdgcloudabidjan.dev/manifest.webmanifest"
   }],
   "prefer_related_applications": true,
   "categories": ["social", "productivity", "news", "business"],
@@ -17,7 +17,7 @@
     "params": {
       "title": "[ Cloud Next OnAir Abidjan ]",
       "text": "Développez vos compétences en participant à des ateliers pratiques, à des discussions de certification et à des questions-réponses en direct avec des Google Developer Expert.",
-      "url": "https://cloud-next-onair-abidjan.web.app/"
+      "url": "https://gdgcloudabidjan.dev/"
     }
   },
   "screenshots": [
