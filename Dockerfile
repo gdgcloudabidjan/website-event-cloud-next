@@ -1,6 +1,7 @@
 # Use the official Golang image to create a build artifact.
 # This is based on Debian and sets the GOPATH to /go.
-FROM golang:1.16 as builder
+# https://hub.docker.com/_/golang
+FROM golang:1.20.3 as builder
 
 # Create and change to the app directory.
 WORKDIR /app
@@ -28,6 +29,12 @@ RUN apk add --no-cache ca-certificates
 
 # Copy the binary to the production image from the builder stage.
 COPY --from=builder /app/server /server
+COPY static/ ./static/
+COPY templates/ ./templates/
+COPY firebase-messaging-sw.js ./firebase-messaging-sw.js
+COPY manifest.webmanifest ./manifest.webmanifest
+COPY robots.txt ./robots.txt
+COPY sitemap.xml ./sitemap.xml
 
 EXPOSE $PORT
 
