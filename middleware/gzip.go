@@ -17,7 +17,7 @@ func (gm *GzipMiddleware) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Header().Set("Cache-Control", "max-age=2592000, public, must-revalidate, proxy-revalidate")
-	w.Header().Set("Expires", "Thu, 23 Dec 2021 20:00:00 GMT")
+	w.Header().Set("Expires", "Thu, 28 Sep 2023 22:00:00 GMT")
 	encodings := r.Header.Get("Accept-Encoding")
 	if !strings.Contains(encodings, "gzip") {
 		gm.Next.ServeHTTP(w, r)
