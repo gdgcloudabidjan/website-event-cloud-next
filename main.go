@@ -13,7 +13,10 @@ import (
 func main() {
 	templates := populateTemplates()
 	controller.Debut(templates)
-	http.ListenAndServe(":8080", &middleware.TimeoutMiddleware{Next: new(middleware.GzipMiddleware)})
+	err := http.ListenAndServe(":8080", &middleware.TimeoutMiddleware{Next: new(middleware.GzipMiddleware)})
+	if err != nil {
+		panic("Failed to start serve")
+	}
 }
 
 func populateTemplates() map[string]*template.Template {
@@ -38,7 +41,10 @@ func populateTemplates() map[string]*template.Template {
 		if err != nil {
 			panic("Failed to read content from file '" + fi.Name() + "'")
 		}
-		f.Close()
+		errClose := f.Close()
+		if errClose != nil {
+			panic("Failed to close the read content from file '" + fi.Name() + "'")
+		}
 		tmpl := template.Must(layout.Clone())
 		_, err = tmpl.Parse(string(content))
 		if err != nil {

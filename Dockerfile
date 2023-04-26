@@ -21,10 +21,15 @@ RUN CGO_ENABLED=0 GOOS=linux go build -mod=readonly -v -o server
 # https://hub.docker.com/_/alpine
 # https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds
 FROM alpine:3
+
+ENV PORT=8080
+
 RUN apk add --no-cache ca-certificates
 
 # Copy the binary to the production image from the builder stage.
 COPY --from=builder /app/server /server
+
+EXPOSE $PORT
 
 # Run the web service on container startup.
 CMD ["/server"]
